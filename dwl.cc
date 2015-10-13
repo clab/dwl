@@ -51,9 +51,9 @@ struct Encoder {
 //#undef DUMB_ADDITIVE
 #define DUMB_ADDITIVE
 #ifdef DUMB_ADDITIVE
-    return sum(m);
+    return sum(m) / m.size();
 #else
-    return sum_cols(tanh(kmh_ngram(concatenate_cols(m), 2)));
+    return sum_cols(tanh(kmh_ngram(concatenate_cols(m), 2))) / m.size();
 #endif
   }
 
